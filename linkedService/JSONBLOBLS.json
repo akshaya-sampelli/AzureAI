@@ -1,0 +1,12 @@
+{
+	"name": "JSONBLOBLS",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobStorage",
+		"typeProperties": {
+			"connectionString": "DefaultEndpointsProtocol=https;AccountName=dbstorage9753;EndpointSuffix=core.windows.net;",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDRBMERENEM2LUFFQ0YtNDA1NC1BNjU5LUQ0MkQwRTU2OTI3OF8yZTY5NzYwNC0xNGRiLTQ5OGEtYjk0Mi05ZmEyNDg2OGYxNjciDQp9"
+		}
+	}
+}
