@@ -1,0 +1,151 @@
+{
+	"name": "Notebook 3",
+	"properties": {
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "Spark1",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "28g",
+			"driverCores": 4,
+			"executorMemory": "28g",
+			"executorCores": 4,
+			"numExecutors": 2,
+			"runAsWorkspaceSystemIdentity": false,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2",
+				"spark.autotune.trackingId": "a508f7a3-d897-431b-b338-9f9d0701038d"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1",
+				"state": {
+					"e8299a97-d62a-4cc0-9fe7-05796b30163b": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"0": "1",
+										"1": "144706.78000000076",
+										"2": "3.417893618026377"
+									},
+									{
+										"0": "2",
+										"1": "11865.450000000033",
+										"2": "2.6875311438278673"
+									},
+									{
+										"0": "3",
+										"1": "1542.7700000000016",
+										"2": "2.7257420494699676"
+									},
+									{
+										"0": "4",
+										"1": "557.7899999999998",
+										"2": "3.2811176470588226"
+									},
+									{
+										"0": "5",
+										"1": "4151.480000000003",
+										"2": "2.7974932614555277"
+									},
+									{
+										"0": "6",
+										"1": "2124.5100000000007",
+										"2": "2.3605666666666676"
+									},
+									{
+										"0": "8",
+										"1": "0.11",
+										"2": "0.11"
+									}
+								],
+								"schema": [
+									{
+										"key": "0",
+										"name": "passenger_count",
+										"type": "bigint"
+									},
+									{
+										"key": "1",
+										"name": "SumTripDistance",
+										"type": "double"
+									},
+									{
+										"key": "2",
+										"name": "AvgTripDistance",
+										"type": "double"
+									}
+								],
+								"truncated": false
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "sum",
+									"categoryFieldKeys": [
+										"1"
+									],
+									"seriesFieldKeys": [
+										"0"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					}
+				}
+			},
+			"enableDebugMode": false,
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/6890261d-e595-4ee4-ae14-636bd2a0cad8/resourceGroups/RG_DS/providers/Microsoft.Synapse/workspaces/myworkspace2508/bigDataPools/Spark1",
+				"name": "Spark1",
+				"type": "Spark",
+				"endpoint": "https://myworkspace2508.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/Spark1",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net",
+					"authHeader": null
+				},
+				"sparkVersion": "3.4",
+				"nodeCount": 10,
+				"cores": 4,
+				"memory": 28,
+				"extraHeader": null
+			},
+			"sessionKeepAliveTimeout": 30
+		},
+		"cells": [
+			{
+				"cell_type": "code",
+				"metadata": {
+					"microsoft": {
+						"language": "python"
+					},
+					"collapsed": false
+				},
+				"source": [
+					"%%pyspark\r\n",
+					"df = spark.read.load('abfss://files@datalakearixk34.dfs.core.windows.net/NYCTaxi/PassengerCountStats_parquetformat/part-00000-6c7f7778-7361-4d54-a8f9-8d211e2c2ffa-c000.snappy.parquet', format='parquet')\r\n",
+					"display(df.limit(10))"
+				],
+				"execution_count": 2
+			}
+		]
+	}
+}

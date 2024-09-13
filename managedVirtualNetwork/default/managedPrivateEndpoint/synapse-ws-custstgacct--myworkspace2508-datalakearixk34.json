@@ -1,0 +1,10 @@
+{
+	"name": "synapse-ws-custstgacct--myworkspace2508-datalakearixk34",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/6890261d-e595-4ee4-ae14-636bd2a0cad8/resourceGroups/dp203-arixk34/providers/Microsoft.Storage/storageAccounts/datalakearixk34",
+		"groupId": "dfs",
+		"fqdns": [
+			"datalakearixk34.dfs.core.windows.net"
+		]
+	}
+}
